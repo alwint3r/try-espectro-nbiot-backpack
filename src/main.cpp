@@ -22,6 +22,13 @@ void setup() {
     digitalWrite(DTRPIN, LOW);
     digitalWrite(RTSPIN, LOW);
 
+    pinMode(PIN_ENABLE, OUTPUT);
+    digitalWrite(PIN_ENABLE, HIGH);
+    delay(500);
+    digitalWrite(PIN_ENABLE, LOW);
+    delay(500);
+    digitalWrite(PIN_ENABLE, HIGH);
+
     nbSerial.begin(115200, SERIAL_8N1, RXPIN, TXPIN);
 
     nbiot.init(nbSerial, -1, -1, -1, 1);
